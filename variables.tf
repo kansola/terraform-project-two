@@ -20,6 +20,6 @@ variable "pvt_key" {
 variable "ssh_fingerprint" {
    type        = string
    description = "SSH fingerprint"
-   default     = "ami-0f5ee92e2d63afc18"
+   default     = ""
 }
 
