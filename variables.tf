@@ -1,36 +1,25 @@
-variable "aws_access_key" {
-  description = "AWS access key"
+variable "do_token" {
+  description = "Digital Ocean Personal Access Token"
   type        = string
   default     = ""
 }
 
-variable "aws_secret_key" {
-  description = "AWS secret key"
+variable "pub_key" {
+  description = "SSH public key"
   type        = string
   default     = ""
 }
 
-variable "aws_region" {
-  description = "AWS region"
+variable "pvt_key" {
+  description = "SSH private key"
   type        = string
-  default     = "ap-south-1"
+  default     = ""
 }
 
 
-variable "ami" {
+variable "ssh_fingerprint" {
    type        = string
-   description = "Ubuntu AMI ID"
+   description = "SSH fingerprint"
    default     = "ami-0f5ee92e2d63afc18"
 }
 
-variable "instance_type" {
-   type        = string
-   description = "Instance type"
-   default     = "t2.micro"
-}
-
-variable "name_tag" {
-   type        = string
-   description = "Name of the EC2 instance"
-   default     = "My EC2 Instance"
-}
