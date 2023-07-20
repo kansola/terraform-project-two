@@ -4,7 +4,7 @@ resource "digitalocean_droplet" "www-1" {
   region = "lon1"
   size = "s-1vcpu-1gb"
   ssh_keys = [
-    "${var.ssh_fingerprint}"
+    "92:05:38:58:d2:b1:c7:b3:ac:ad:b1:15:58:34:0b:b3"
   ]
   
   connection {
