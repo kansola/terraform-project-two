@@ -16,5 +16,5 @@ variable "ssh_fingerprint" {}
 
 # Configure the DigitalOcean Provider
 provider "digitalocean" {
-  token = "dop_v1_65499734874297363a9e29d1e9ee59022b1aa6cfe459a4dbd2bb92a7dfbf558b"
+  token = var.do_token
 }
