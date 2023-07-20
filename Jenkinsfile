@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+            terraform 'terraform'
+    }
 
     environment {
         DO_TOKEN     = credentials('do_token')
@@ -11,18 +14,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/kansola/terraform-project.git'
+                git 'https://github.com/kansola/terraform-project.git'
             }
         }
         stage('Terraform init') {
             steps {
                 sh 'terraform init'
-            }
-        }
-        stage('Plan') {
-            steps {
-                sh 'terraform plan -out tfplan'
-                sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
         stage('Apply / Destroy') {
