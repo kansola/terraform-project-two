@@ -6,7 +6,6 @@ pipeline {
 
     environment {
         DO_TOKEN     = credentials('do_token')
-        PUB_KEY = credentials('pub-key')
         PVT_KEY     = credentials('pvt_key')
         SSH_FINGERPRINT = credentials('ssh_fingerprint')
     }
