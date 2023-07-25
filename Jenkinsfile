@@ -6,8 +6,7 @@ pipeline {
 
     environment {
         DO_TOKEN     = credentials('do_token')
-        PVT_KEY     = credentials('pvt_key')
-        PUB_KEY     = credentials('pub_key')                         
+        PVT_KEY     = credentials('pvt_key')                        
         SSH_FINGERPRINT = credentials('ssh_fingerprint')
     }
 
@@ -24,12 +23,12 @@ pipeline {
         }
         stage('Terraform plan') {
             steps {
-               sh 'terraform plan -var "do_token=$DO_TOKEN" -var "pub_key=$PUB_KEY" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT"'
+               sh 'terraform plan -var "do_token=$DO_TOKEN" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT"'
             }
         }
         stage('Apply / Destroy') {
             steps {
-               sh 'terraform apply -var "do_token=$DO_TOKEN" -var "pub_key=$PUB_KEY" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT" --auto-approve'
+               sh 'terraform apply -var "do_token=$DO_TOKEN" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT" --auto-approve'
             }
 
         }
