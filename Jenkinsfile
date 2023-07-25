@@ -22,6 +22,11 @@ pipeline {
                 sh 'terraform init'
             }
         }
+        stage('Terraform plan') {
+            steps {
+               sh 'terraform plan -var "do_token=$DO_TOKEN" -var "pub_key=$PUB_KEY" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT"'
+            }
+        }
         stage('Apply / Destroy') {
             steps {
                sh 'terraform apply -var "do_token=$DO_TOKEN" -var "pub_key=$PUB_KEY" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT" --auto-approve'
