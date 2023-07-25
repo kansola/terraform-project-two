@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Apply / Destroy') {
             steps {
-               sh 'terraform apply -var "do_token = $DO_TOKEN" -var "pub_key = $PUB_KEY" -var "pvt_key = $PVT_KEY" -var "ssh_fingerprint = $SSH_FINGERPRINT" --auto-approve'
+               sh 'terraform apply -var "do_token=$DO_TOKEN" -var "pub_key=$PUB_KEY" -var "pvt_key=$PVT_KEY" -var "ssh_fingerprint=$SSH_FINGERPRINT" --auto-approve'
             }
 
         }
