@@ -19,8 +19,7 @@ resource "digitalocean_droplet" "www-1" {
   provisioner "remote-exec" {
     inline = [
       # install nginx
-      "sudo apt update -y",
-      "sudo apt install -qy git"
+      "sudo apt update -y"
 
     ]
   }
