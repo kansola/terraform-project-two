@@ -19,6 +19,7 @@ resource "digitalocean_droplet" "www-1" {
   provisioner "remote-exec" {
     inline = [
       # install nginx
+      "export PATH=$PATH:/usr/bin",
       "touch hello.txt",
       "echo 'Have a great day!' >> hello.txt"
       "sudo apt update -y",
