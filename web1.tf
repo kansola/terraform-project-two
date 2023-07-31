@@ -20,7 +20,7 @@ resource "digitalocean_droplet" "www-1" {
     inline = [
       # install nginx
       "sudo apt update -y",
-      "sudo apt install -qy default-jdk",
+      "sudo apt install -qy default-jre",
     ]
   }
 }
