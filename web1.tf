@@ -19,8 +19,10 @@ resource "digitalocean_droplet" "www-1" {
   provisioner "remote-exec" {
     inline = [
       # install nginx
+      "touch hello.txt",
+      "echo 'Have a great day!' >> hello.txt"
       "sudo apt update -y",
-      "sudo apt install -y default-jre"
+      "sudo apt install -y default-jdk"
     ]
   }
 }
